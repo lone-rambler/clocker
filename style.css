@@ -1,0 +1,91 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+.bg {
+  animation: slide 10s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, #0275d8 50%, #09f 50%);
+  bottom: 0;
+  left: -50%;
+  opacity: 0.5;
+  position: fixed;
+  right: -50%;
+  top: 0;
+  z-index: -1;
+}
+
+.bg2 {
+  animation-direction: alternate-reverse;
+  animation-duration: 16s;
+}
+
+.bg3 {
+  animation-duration: 20s;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-25%);
+  }
+  100% {
+    transform: translateX(25%);
+  }
+}
+
+.active-link {
+  transform: scale(1.1);
+}
+.nav-link {
+  transition: all 200ms ease-in-out;
+  position: relative;
+}
+
+@keyframes stretch {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.active-link::before,
+.nav-link:hover::before {
+  content: '';
+  position: absolute;
+  bottom: 12%;
+  left: 0;
+  height: 3px;
+  background-color: white;
+  width: 0;
+  animation: stretch ease-in-out both alternate 200ms;
+}
+
+.nav-link:hover {
+  transform: scale(1.1);
+}
+
+.filter {
+  filter: drop-shadow(5px 5px 20px #0004);
+}
+
+.box-shadow-bottom {
+  box-shadow: 5px 5px 50px #0003 inset;
+  backdrop-filter: brightness(95%);
+}
+
+.text-shadow {
+  text-shadow: 5px 5px 20px #0007;
+}
+
+.fw-600 {
+  font-weight: 600;
+}
+
+.fw-900 {
+  font-weight: 900;
+}
+
+.svg-opacity {
+  opacity: 0.9;
+}
