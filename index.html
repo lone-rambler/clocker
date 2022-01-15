@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width" />
+
+    <link rel="icon" href="./img/clock-favi-svg.svg" type="image/x-icon">
     <title>Clocker</title>
 
     <!-- Styles -->
@@ -21,17 +23,20 @@
     <!-- NavBar -->
     <nav>
       <a href="index.html" class="logo">Clocker</a>
-      <a href="index.html" class="nav-link active-link"><span>Home</span></a>
-      <a href="./src/login.html" class="nav-link">Log in</a>
-      <a href="./src/register.html" class="nav-link">Register</a>
+      <a href="index.html" class="nav-link"><span class="active-link slide-animation">Home</span></a>
+      <a href="./src/login.html" class="nav-link"><span class="slide-animation">Log in</span></a>
+      <a href="./src/register.html" class="nav-link"><span class="slide-animation">Register</span></a>
     </nav>
 
     <!-- Main content -->
+
+ 
     <div class="container">
+      <!-- About section -->
       <div class="row">
         <div class="col-8 col-s-8 offset-2 offset-s-2">
-          <h1>What is clocker?</h1>
-          <p>
+          <h1 class="title">What is clocker?</h1>
+          <p class="fit-box">
             Clocker is an application that ensures that there is your working
             time for developers and entire development teams. At the beginning
             of the total working hours, you can check the commitment of
@@ -39,6 +44,22 @@
             calculated. On our website it is also possible to obtain help from
             project or customer statistics.
           </p>
+        </div>
+      </div>
+
+      <!-- Counters section -->
+      <div class="row">
+        <div class="col-2 col-s-2 offset-3 card">
+          <img class="svg-icon" src="./img/user-svg.svg">
+          <h1 class="counter"><span class="count-up">35</span> users</h1>
+        </div>
+        <div class="col-2 col-s-2 card">
+          <img class="svg-icon" src="./img/day-svg.svg">
+          <h1 class="counter"><span class="count-up">4</span> hours today</h1>
+        </div>
+        <div class="col-2 col-s-2 card">
+          <img class="svg-icon" src="./img/month-svg.svg">
+          <h1 class="counter"><span class="count-up">52</span> hours this month</h1>
         </div>
       </div>
     </div>
