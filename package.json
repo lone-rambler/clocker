@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "parallelshell \"npm run start:server\" \"npm run watch:css\"",
-    "start:server": "browser-sync start --server --files './*'",
-    "build:css": "lessc ./style.less ./style.css",
-    "watch:css": "onchange -v \"src/style/style.css\" -- npm run build:css"
+    "start:server": "browser-sync start --server --files './index.html' './src/*' './img/*' './style/style.css'",
+    "build:css": "lessc ./style/style.less ./style/style.css",
+    "watch:css": "onchange -v \"./style/style.css\" -- npm run build:css"
   },
   "author": "",
   "license": "ISC",
