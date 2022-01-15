@@ -7,7 +7,7 @@
     "start": "parallelshell \"npm run start:server\" \"npm run watch:css\"",
     "start:server": "browser-sync start --server --files './index.html' './src/*' './img/*' './style/style.css'",
     "build:css": "lessc ./style/style.less ./style/style.css",
-    "watch:css": "onchange -v \"./style/style.css\" -- npm run build:css"
+    "watch:css": "onchange -v \"./style/style.less\" -- npm run build:css"
   },
   "author": "",
   "license": "ISC",
