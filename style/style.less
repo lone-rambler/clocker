@@ -1,13 +1,11 @@
-html,
-body {
+html, body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
   padding: 0;
   margin: 0;
 }
 
-body {
-  width: fit-content;
-  height: fit-content;
+*{
+  box-sizing: border-box;
 }
 
 a {
@@ -305,6 +303,7 @@ nav {
   text-shadow: 0.3rem 0.3rem 1.25rem rgba(0, 0, 0, 0.7);
   @media only screen and (max-width: 600px) {
     flex: 1 0 100%;
+    text-align: center;
   }
 }
 
@@ -313,7 +312,7 @@ nav {
     width: 0;
   }
   to {
-    width: 100%;
+    width:100%;
   }
 }
 
@@ -322,9 +321,13 @@ nav {
   font-size: 1.5rem;
   display: grid;
   place-items: center;
-  margin: 0 1.5rem;
+  margin: .2rem 1.5rem;
   transition: all 200ms ease-in-out;
   position: relative;
+  @media only screen and (max-width: 600px) {
+    flex: 1 1 30%;
+    text-align: center;
+  }
 }
 
 .nav-link:hover {
@@ -334,6 +337,7 @@ nav {
 .active-link {
   transform: scale(1.1);
 }
+
 
 .active-link::before,
 .nav-link:hover::before {
@@ -345,6 +349,9 @@ nav {
   background-color: white;
   width: 0;
   animation: stretch ease-in-out both alternate 200ms;
+  @media only screen and (max-width: 600px) {
+    bottom: -0.3rem;
+  }
 }
 
 /* #endregion NavBar */

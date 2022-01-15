@@ -4,9 +4,8 @@ body {
   padding: 0;
   margin: 0;
 }
-body {
-  width: fit-content;
-  height: fit-content;
+* {
+  box-sizing: border-box;
 }
 a {
   color: inherit;
@@ -294,6 +293,7 @@ nav {
 @media only screen and (max-width: 600px) {
   .logo {
     flex: 1 0 100%;
+    text-align: center;
   }
 }
 @keyframes stretch {
@@ -309,9 +309,15 @@ nav {
   font-size: 1.5rem;
   display: grid;
   place-items: center;
-  margin: 0 1.5rem;
+  margin: 0.2rem 1.5rem;
   transition: all 200ms ease-in-out;
   position: relative;
+}
+@media only screen and (max-width: 600px) {
+  .nav-link {
+    flex: 1 1 30%;
+    text-align: center;
+  }
 }
 .nav-link:hover {
   transform: scale(1.1);
@@ -329,6 +335,12 @@ nav {
   background-color: white;
   width: 0;
   animation: stretch ease-in-out both alternate 200ms;
+}
+@media only screen and (max-width: 600px) {
+  .active-link::before,
+  .nav-link:hover::before {
+    bottom: -0.3rem;
+  }
 }
 /* #endregion NavBar */
 /* #region Main content */
