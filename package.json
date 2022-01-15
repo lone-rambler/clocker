@@ -1,0 +1,21 @@
+{
+  "name": "lab_02",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "parallelshell 'npm run start:server' 'npm run watch:css' ",
+    "start:server": "browser-sync start --server --files './*'",
+    "build:css": "lessc.cmd ./style.less ./style.css",
+    "watch:css": "onchange -v \"src/style/style.css\" -- npm run build:css"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "^2.27.7",
+    "lessc": "^1.0.2",
+    "onchange": "^7.1.0",
+    "parallelshell": "^3.0.2"
+  }
+}
