@@ -15,6 +15,6 @@
     "browser-sync": "^2.27.7",
     "lessc": "^1.0.2",
     "onchange": "^7.1.0",
-    "parallelshell": "^3.0.2"
+    "parallelshell": "^3.0.1"
   }
 }
