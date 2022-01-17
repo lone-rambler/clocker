@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width" />
+
+    <link rel="icon" href="../img/clock-favi-svg.svg" type="image/x-icon" />
+    <title>Clocker</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../style/style.css" />
+
+    <!-- Scripts -->
+    <script src="./src/index.js" defer></script>
+  </head>
+  <body>
+    <!-- Background animation -->
+    <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
+
+    <!-- NavBar -->
+    <nav>
+      <a href="../index.html" class="logo">Clocker</a>
+      <a href="../index.html" class="nav-link"
+        ><span class="slide-animation">Home</span></a
+      >
+      <a href="user_dashboard.html" class="nav-link"
+        ><span class="active-link slide-animation">Dashboard</span></a
+      >
+      <a href="#" class="nav-link"
+        ><span class="slide-animation">Log out</span></a
+      >
+    </nav>
+
+    <!-- Main content -->
+
+    <div class="container">
+      <!-- Admin actions section -->
+      <div class="row">
+        <div class="col-8 col-s-8 offset-2 offset-s-2">
+          <h1 class="title">User Dashboard</h1>
+          <div class="fit-box fit-box-row">
+            <button class="action-button">
+              <img class="button-svg" src="../img/person-svg.svg" />Manage
+              account
+            </button>
+            <button class="action-button">
+              <img class="button-svg" src="../img/report-svg.svg" />Generate
+              report
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Project List Section -->
+      <div class="row">
+        <div class="col-8 col-s-8 offset-2 offset-s-2">
+          <h1 class="title">Projects</h1>
+
+          <div class="fit-box">
+            <!-- Nazwa klienta nazwa projektu -->
+            <div class="list-row">
+              <div class="list-row-name">IDelivery Project</div>
+              <div class="list-row-author">Pawel</div>
+            </div>
+
+            <div class="list-row">
+              <div class="list-row-name">IDelivery Project</div>
+              <div class="list-row-author">Pawel</div>
+            </div>
+
+            <div class="list-row">
+              <div class="list-row-name">IDelivery Project</div>
+              <div class="list-row-author">Pawel</div>
+            </div>
+
+            <div class="list-row">
+              <div class="list-row-name">IDelivery Project</div>
+              <div class="list-row-author">Pawel</div>
+            </div>
+
+            <div class="list-row">
+              <div class="list-row-name">IDelivery Project</div>
+              <div class="list-row-author">Pawel</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

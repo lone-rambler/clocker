@@ -4,6 +4,7 @@ body,
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 a {
   color: inherit;
@@ -355,9 +356,10 @@ nav {
   font-size: 2.5rem;
   font-weight: 900;
   margin: 3rem 0;
-  text-shadow: 0.3rem 0.3rem 1.25rem rgba(0, 0, 0, 0.7);
+  text-shadow: 0.3rem 0.3rem 1.25rem #000000b3;
 }
 .fit-box {
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -367,8 +369,8 @@ nav {
   font-weight: 500;
   background-color: #fff3;
   border-radius: 0.3rem;
-  padding: 3rem;
   text-align: justify;
+  padding: 1.5rem 1.5rem;
 }
 .fit-box-row {
   flex-direction: row;
@@ -387,11 +389,11 @@ nav {
   opacity: 0.9;
 }
 .counter {
-  text-shadow: 0.3rem 0.3rem 1.25rem rgba(0, 0, 0, 0.7);
+  text-shadow: 0.3rem 0.3rem 1.25rem #000000b3;
 }
 .text-input {
   width: 100%;
-  color: #000;
+  color: black;
   font-size: 1rem;
   text-align: center;
   line-height: 2.5rem;
@@ -445,5 +447,37 @@ nav {
 .action-button:hover {
   transform: scale(1.1);
   cursor: pointer;
+}
+.list-row {
+  width: fit-content;
+  align-self: center;
+  width: 100%;
+  padding: 1rem 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "name name name" "author . .";
+  box-shadow: 0.3rem 0.3rem 3rem #00000033 inset;
+  border-radius: 0.3rem;
+  transition: all 200ms ease-in-out;
+}
+.list-row:hover {
+  backdrop-filter: brightness(90%);
+  cursor: pointer;
+}
+.list-row:not(.list-row:first-of-type):not(.list-row:last-of-type):not(.list-row:nth-of-type(2n+1)) {
+  margin: 1.5rem 0;
+}
+.list-row-name {
+  grid-area: name;
+  color: #ecf8ff;
+  text-shadow: 0.3rem 0.3rem 1.25rem #00203b;
+}
+.list-row-author {
+  grid-area: author;
+  font-size: 1rem;
+  font-weight: normal;
+  color: #cfecff;
+  text-shadow: 0.3rem 0.3rem 1.25rem #00203b;
 }
 /* #endregion Main content */

@@ -4,6 +4,7 @@ body,
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
 a {
@@ -11,10 +12,23 @@ a {
   text-decoration: none;
 }
 
+
+
 /* #region Variables*/
 @small-font: 1rem;
 @normal-font: 1.5rem;
 @big-font: 2.5rem;
+
+@dark-blue:#0275d8;
+@darker-blue:#0065bd;
+@navy-blue:#00203b;
+@light-blue:#0099ff;
+@lighter-blue:#6bc4ff;
+@cloud-blue:#cfecff;
+@sky-blue:#ecf8ff;
+
+@shadow-black:#000000b3;
+@shadow-gray:#00000033;
 /* #endregion Variables*/
 
 /* #region 12 columns */
@@ -376,10 +390,11 @@ nav {
   font-size: @big-font;
   font-weight: 900;
   margin: 3rem 0;
-  text-shadow: 0.3rem 0.3rem 1.25rem rgba(0, 0, 0, 0.7);
+  text-shadow: 0.3rem 0.3rem 1.25rem @shadow-black;
 }
 
 .fit-box {
+  width:100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -389,8 +404,8 @@ nav {
   font-weight: 500;
   background-color: #fff3;
   border-radius: 0.3rem;
-  padding: 3rem;
   text-align: justify;
+  padding:1.5rem 1.5rem;
 }
 
 .fit-box-row {
@@ -413,12 +428,12 @@ nav {
 }
 
 .counter {
-  text-shadow: 0.3rem 0.3rem 1.25rem rgba(0, 0, 0, 0.7);
+  text-shadow: 0.3rem 0.3rem 1.25rem @shadow-black;
 }
 
 .text-input {
   width: 100%;
-  color: #000;
+  color: black;
   font-size: @small-font;
   text-align: center;
   line-height: 2.5rem;
@@ -440,7 +455,7 @@ nav {
   color: inherit;
   font-size: @normal-font;
   font-weight: 500;
-  background-color: #0275d8;
+  background-color: @dark-blue;
   text-decoration: none;
   border-radius: 0.3rem;
   border: none;
@@ -459,7 +474,7 @@ nav {
 
 .action-button {
   width: fit-content;
-  background-color: #0275d8;
+  background-color: @dark-blue;
   color: inherit;
   font-size: @small-font;
   font-weight: 500;
@@ -479,5 +494,47 @@ nav {
   transform: scale(1.1);
   cursor: pointer;
 }
+
+.list-row{
+  width:fit-content;
+  align-self: center;
+  width:100%;
+  padding:1rem 1rem;
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+  "name name name"
+  "author . .";
+  box-shadow: .3rem .3rem 3rem @shadow-gray inset;
+  border-radius: .3rem;
+  transition: all 200ms ease-in-out;
+  
+  &:hover{
+    backdrop-filter: brightness(90%);
+    cursor: pointer;
+  }
+
+  &:not(&:first-of-type):not(&:last-of-type):not(&:nth-of-type(2n+1)){
+    margin: 1.5rem 0;
+  }
+}
+
+.list-row-name{
+  grid-area: name;
+  color: @sky-blue;
+  text-shadow: 0.3rem 0.3rem 1.25rem @navy-blue;
+}
+
+.list-row-author{
+  grid-area: author;
+  font-size: @small-font;
+  font-weight: normal;
+  color: @cloud-blue;
+  text-shadow: 0.3rem 0.3rem 1.25rem @navy-blue;
+}
+
+
+
 
 /* #endregion Main content */
