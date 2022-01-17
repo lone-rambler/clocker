@@ -388,8 +388,20 @@ nav {
   filter: drop-shadow(5px 5px 20px #0004);
   opacity: 0.9;
 }
+@media screen and (max-width: 850px) {
+  .svg-icon {
+    width: 11rem;
+    height: 11rem;
+  }
+}
 .counter {
   text-shadow: 0.3rem 0.3rem 1.25rem #000000b3;
+  text-align: center;
+}
+@media screen and (max-width: 850px) {
+  .counter {
+    font-size: 20px;
+  }
 }
 .text-input {
   width: 100%;
