@@ -463,10 +463,15 @@ nav {
 }
 .list-row:hover {
   backdrop-filter: brightness(90%);
-  cursor: pointer;
 }
-.list-row:not(.list-row:first-of-type):not(.list-row:last-of-type):not(.list-row:nth-of-type(2n+1)) {
-  margin: 1.5rem 0;
+.list-row:only-of-type {
+  margin: 0;
+}
+.list-row:not(.list-row:last-of-type) {
+  margin-bottom: 1.5rem;
+}
+.list-row a {
+  cursor: pointer;
 }
 .list-row-name {
   grid-area: name;
@@ -479,5 +484,62 @@ nav {
   font-weight: normal;
   color: #cfecff;
   text-shadow: 0.3rem 0.3rem 1.25rem #00203b;
+}
+.list-row-task {
+  width: fit-content;
+  align-self: center;
+  width: 100%;
+  padding: 1rem 1rem;
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr 0.25fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 2fr 1fr;
+  grid-template-areas: "name name name . start stop end" "desc desc desc . timer timer timer" "desc desc desc . timer timer timer";
+  border: 0.3rem solid #6bc4ff;
+  background: rgba(207, 236, 255, 0.2);
+  border-radius: 0.3rem;
+  transition: all 200ms ease-in-out;
+}
+.list-row-task:only-of-type {
+  margin: 0;
+}
+.list-row-task:not(.list-row-task:last-of-type) {
+  margin-bottom: 1.5rem;
+}
+.list-row-task a {
+  cursor: pointer;
+}
+.list-row-task-name {
+  grid-area: name;
+  align-self: center;
+}
+.list-row-task-desc {
+  grid-area: desc;
+  font-size: 1rem;
+}
+.list-row-task-start {
+  grid-area: start;
+  place-self: center;
+  cursor: pointer;
+}
+.list-row-task-stop {
+  grid-area: stop;
+  place-self: center;
+  cursor: pointer;
+}
+.list-row-task-end {
+  grid-area: end;
+  place-self: center;
+  cursor: pointer;
+}
+.list-row-task-timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: timer;
+  place-self: center;
+  width: fit-content;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  background-color: #6bc4ff;
 }
 /* #endregion Main content */
