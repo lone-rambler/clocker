@@ -12,22 +12,21 @@ a {
   text-decoration: none;
 }
 
-
 /* #region Variables*/
 @small-font: 1rem;
 @normal-font: 1.5rem;
 @big-font: 2.5rem;
 
-@dark-blue:#0275d8;
-@darker-blue:#0065bd;
-@navy-blue:#00203b;
-@light-blue:#0099ff;
-@lighter-blue:#6bc4ff;
-@cloud-blue:#cfecff;
-@sky-blue:#ecf8ff;
+@dark-blue: #0275d8;
+@darker-blue: #0065bd;
+@navy-blue: #00203b;
+@light-blue: #0099ff;
+@lighter-blue: #6bc4ff;
+@cloud-blue: #cfecff;
+@sky-blue: #ecf8ff;
 
-@shadow-black:#000000b3;
-@shadow-gray:#00000033;
+@shadow-black: #000000b3;
+@shadow-gray: #00000033;
 /* #endregion Variables*/
 
 /* #region 12 columns */
@@ -393,7 +392,7 @@ nav {
 }
 
 .fit-box {
-  width:100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -404,7 +403,8 @@ nav {
   background-color: #fff3;
   border-radius: 0.3rem;
   text-align: justify;
-  padding:1.5rem 1.5rem;
+  padding: 1.5rem 1.5rem;
+  margin: 1.5rem;
 }
 
 .fit-box-row {
@@ -424,8 +424,8 @@ nav {
   padding: 3rem;
   filter: drop-shadow(5px 5px 20px #0004);
   opacity: 0.9;
-  @media screen and (max-width:850px) {
-    width:11rem;
+  @media screen and (max-width: 850px) {
+    width: 11rem;
     height: 11rem;
   }
 }
@@ -433,17 +433,18 @@ nav {
 .counter {
   text-shadow: 0.3rem 0.3rem 1.25rem @shadow-black;
   text-align: center;
-  @media screen and (max-width:850px) {
+  @media screen and (max-width: 850px) {
     font-size: 20px;
   }
 }
 
-.text-input {
+.text-input,
+.select-input {
   width: 100%;
+  height: 2.5rem;
   color: black;
   font-size: @small-font;
   text-align: center;
-  line-height: 2.5rem;
   outline: none;
   border-radius: 0.3rem;
   border: none;
@@ -497,126 +498,179 @@ nav {
   transition: all 200ms ease-in-out;
 }
 
+.action-button-bigger {
+  font-size: @normal-font;
+}
+
 .action-button:hover {
   transform: scale(1.1);
   cursor: pointer;
 }
 
-.list-row{
-  width:fit-content;
+.list-row-project {
+  width: fit-content;
   align-self: center;
-  width:100%;
-  padding:1rem 1rem;
-  display:grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+  padding: 1rem 1rem;
+  display: grid;
+  grid-template-columns: 0.5fr 0.5fr 1fr 0.25fr 0.25fr;
   grid-template-rows: 1fr 1fr;
   grid-template-areas:
-  "name name name"
-  "author . .";
-  box-shadow: .3rem .3rem 3rem @shadow-gray inset;
-  border-radius: .3rem;
+    'name name name name delete'
+    'group client . . .';
+  box-shadow: 0.3rem 0.3rem 3rem @shadow-gray inset;
+  border-radius: 0.3rem;
   transition: all 200ms ease-in-out;
-  
-  &:hover{
+
+  &:hover {
     backdrop-filter: brightness(90%);
   }
-  
-  &:only-of-type{
-    margin:0;
+
+  &:only-of-type {
+    margin: 0;
   }
 
-  &:not(&:last-of-type){
+  &:not(&:last-of-type) {
     margin-bottom: 1.5rem;
   }
-  
-  & a{
+
+  & a {
     cursor: pointer;
   }
 }
 
-.list-row-name{
+.list-row-name {
   grid-area: name;
   color: @sky-blue;
   text-shadow: 0.3rem 0.3rem 1.25rem @navy-blue;
 }
 
-.list-row-author{
-  grid-area: author;
+.list-row-client {
+  grid-area: client;
   font-size: @small-font;
   font-weight: normal;
   color: @cloud-blue;
   text-shadow: 0.3rem 0.3rem 1.25rem @navy-blue;
 }
 
-.list-row-task{
-  width:fit-content;
+.list-row-group {
+  grid-area: group;
+  font-size: @small-font;
+  font-weight: normal;
+  color: @cloud-blue;
+  text-shadow: 0.3rem 0.3rem 1.25rem @navy-blue;
+}
+
+.list-row-task {
+  width: fit-content;
   align-self: center;
-  width:100%;
-  padding:1rem 1rem;
-  display:grid;
-  grid-template-columns:1fr 1fr 1fr;
+  width: 100%;
+  padding: 1rem 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr auto;
   grid-template-areas:
-  "start stop end"
-  "timer timer timer"
-  "name name name"
-  "desc desc desc";
+    'start stop end'
+    'timer timer timer'
+    'name name name'
+    'desc desc desc';
 
-  border:.3rem solid @lighter-blue;
+  border: 0.3rem solid @lighter-blue;
   background: fade(@cloud-blue, 20%);
-  border-radius: .3rem;
+  border-radius: 0.3rem;
   transition: all 200ms ease-in-out;
-  
-  &:only-of-type{
-    margin:0;
+
+  &:only-of-type {
+    margin: 0;
   }
 
-  &:not(&:last-of-type){
+  &:not(&:last-of-type) {
     margin-bottom: 1.5rem;
   }
-  
-  & a{
+
+  & a {
     cursor: pointer;
   }
 }
 
-.list-row-task-name{
+.list-row-task-name {
   grid-area: name;
-    place-self: center;
+  place-self: center;
 }
-.list-row-task-desc{
-  grid-area:desc;
+.list-row-task-desc {
+  grid-area: desc;
   font-size: @small-font;
-    place-self: center;
+  place-self: center;
 }
-.list-row-task-start{
+.list-row-task-start {
   grid-area: start;
   justify-self: center;
   align-self: start;
   cursor: pointer;
 }
-.list-row-task-stop{
+.list-row-task-stop {
   grid-area: stop;
   justify-self: center;
   align-self: start;
   cursor: pointer;
 }
-.list-row-task-end{
+.list-row-task-end {
   grid-area: end;
   justify-self: center;
   align-self: start;
   cursor: pointer;
 }
-.list-row-task-timer{
-  display:flex;
-  justify-content:center;
+.list-row-task-timer {
+  display: flex;
+  justify-content: center;
   align-items: center;
   grid-area: timer;
   place-self: center;
-  padding: .5rem;
-  border-radius:.3rem;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
   background-color: @lighter-blue;
-    width:100%;
+  width: 100%;
+}
+
+.list-row-reusable {
+  width: fit-content;
+  align-self: center;
+  width: 100%;
+  padding: 1rem 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 0.25fr 0.25fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: 'name . . edit delete';
+  box-shadow: 0.3rem 0.3rem 3rem @shadow-gray inset;
+  border-radius: 0.3rem;
+  transition: all 200ms ease-in-out;
+
+  &:only-of-type {
+    margin: 0;
+  }
+
+  &:not(&:last-of-type) {
+    margin-bottom: 1.5rem;
+  }
+
+  & a {
+    cursor: pointer;
+  }
+}
+
+.list-row-name-reusable {
+  grid-area: name;
+  place-self: center;
+}
+
+.list-row-edit-reusable {
+  grid-area: edit;
+  place-self: center;
+}
+
+.list-row-delete-reusable {
+  grid-area: delete;
+  place-self: center;
 }
 
 /* #endregion Main content */

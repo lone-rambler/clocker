@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width" />
+
+    <link rel="icon" href="../img/clock-favi-svg.svg" type="image/x-icon">
+    <title>Clocker</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../style/style.css" />
+
+    <!-- Scripts -->
+    <script src="./src/index.js" defer></script>
+  </head>
+  <body>
+    <!-- Background animation -->
+    <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
+
+    <!-- NavBar -->
+    <nav>
+      <a href="../index.html" class="logo">Clocker</a>
+      <a href="../index.html" class="nav-link"><span class="slide-animation">Home</span></a>
+      <a href="admin_dashboard.html" class="nav-link"
+      ><span class="slide-animation">Dashboard</span></a>
+      <a href="#" class="nav-link"><span class="slide-animation">Log out</span></a>
+    </nav>
+
+    <!-- Main content -->
+
+ 
+    <div class="container">
+      <!-- Admin actions section -->
+      <div class="row">
+        <div class="col-8 col-s-8 offset-2 offset-s-2">
+          <h1 class="title">Add new client</h1>
+
+          <div class="fit-box">
+            <h2>Project name</h2>
+            <input class="text-input" type="text">
+            <h2>Group</h2>
+            <select class="select-input" type="select">
+                <option value="dog">Dog</option>
+                <option value="cat">Cat</option>
+                <option value="hamster">Hamster</option>
+                <option value="parrot">Parrot</option>
+                <option value="spider">Spider</option>
+                <option value="goldfish">Goldfish</option>
+            </select>
+            <h2>Client</h2>
+            <select class="select-input" type="select">
+                <option value="dog">Dog</option>
+                <option value="cat">Cat</option>
+                <option value="hamster">Hamster</option>
+                <option value="parrot">Parrot</option>
+                <option value="spider">Spider</option>
+                <option value="goldfish">Goldfish</option>
+            </select>
+            <input class="submit-input" type="submit" value="Submit">
+          </div>
+        </div>
+      </div>
+  </body>
+</html>
