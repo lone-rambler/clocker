@@ -70,16 +70,20 @@ const getTimeString = (epoch_time) => {
   // Seconds
   let time = new Date(epoch_time).getTime();
   //   Get amount of hours
-  const hours = parseInt(time / 3600);
+  let hours = parseInt(time / 3600);
   //   Substract number of equivalent seconds
   time -= hours * 3600;
   //   Get amount of minutes
-  const minutes = parseInt(time / 60);
+  let minutes = parseInt(time / 60);
   //   Substract number of equivalent seconds
   time -= minutes * 60;
   //   Get amount of seconds
   let seconds = parseInt(time);
   //   Adding 0 in front of seconds to have 2 digits
+
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
   if (seconds < 10) {
     seconds = `0${seconds}`;
   }
