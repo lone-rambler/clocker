@@ -12,9 +12,9 @@
     <link rel="stylesheet" href="../style/style.css" />
 
     <!-- Scripts -->
-    <script src="./src/index.js" defer></script>
+    <script src="./getTaskData.js"></script>
   </head>
-  <body>
+  <body onLoad="getData()">
     <!-- Background animation -->
     <div class="bg"></div>
     <div class="bg bg2"></div>
@@ -44,17 +44,20 @@
 
           <div class="fit-box">
             <!-- Nazwa klienta nazwa projektu -->
-            <div class="list-row-task">
+            <div class="list-row-task" id="taskId">
               <div class="list-row-task-name">Add new Title Header</div>
               <div class="list-row-task-desc">
-                Task is to add a new header which will display new title from Trello. This is a placeholder for the new description to this Task
+                Task is to add a new header which will display new title from
+                Trello. This is a placeholder for the new description to this
+                Task
               </div>
               <div class="list-row-task-start">▶️</div>
               <div class="list-row-task-stop">⏸️</div>
               <div class="list-row-task-end">⏹️</div>
               <div class="list-row-task-timer">3:24</div>
             </div>
-            <div class="list-row-task">
+
+            <div class="list-row-task" id="taskId2">
               <div class="list-row-task-name">Task placeholder name</div>
               <div class="list-row-task-desc">
                 ntrary to popular belief, Lorem Ipsum is not simply random text.
